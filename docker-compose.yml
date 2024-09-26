@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend:
+    build: ./my-nextjs-app
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./my-nextjs-app:/server.js
+    environment:
+      - PORT=4000
+    depends_on:
+      - mongo
